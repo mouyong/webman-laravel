@@ -11,11 +11,9 @@
 |
 */
 
-$app = new LaravelZero\Framework\Application(
-    dirname(__DIR__)
+$app = new Illuminate\Foundation\Application(
+    $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
-
-$app->useStoragePath(runtime_path());
 
 /*
 |--------------------------------------------------------------------------
@@ -30,17 +28,17 @@ $app->useStoragePath(runtime_path());
 
 $app->singleton(
     Illuminate\Contracts\Http\Kernel::class,
-    App\Http\Kernel::class,
+    App\Http\Kernel::class
 );
 
 $app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
-    LaravelZero\Framework\Kernel::class
+    App\Console\Kernel::class
 );
 
 $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
-    Illuminate\Foundation\Exceptions\Handler::class
+    App\Exceptions\Handler::class
 );
 
 /*

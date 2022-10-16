@@ -1,0 +1,80 @@
+{
+    "name": "mouyong/illuminate-foundation",
+    "description": "A web application foundation.",
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
+    "homepage": "https://laravel.com",
+    "version": "dev-master",
+    "version_normalized": "9999999-dev",
+    "license": [
+        "MIT"
+    ],
+    "authors": [
+        {
+            "name": "Taylor Otwell",
+            "email": "taylorotwell@gmail.com",
+            "homepage": "https://github.com/taylorotwell",
+            "role": "Creator of Laravel"
+        },
+        {
+            "name": "mouyong",
+            "email": "my24251325@gmail.com",
+            "homepage": "https://github.com/mouyong",
+            "role": "Mirror author"
+        }
+    ],
+    "type": "library",
+    "support": {
+        "issues": "https://github.com/mouyong/illuminate-foundation/issues",
+        "source": "https://github.com/mouyong/illuminate-foundation"
+    },
+    "autoload": {
+        "psr-0": {
+            "Illuminate\\Foundation\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "9.x-dev"
+        }
+    },
+    "target-dir": "Illuminate/Foundation",
+    "require": {
+        "php": "^8",
+        "illuminate/auth": "dev-master",
+        "illuminate/cache": "dev-master",
+        "illuminate/config": "dev-master",
+        "illuminate/console": "dev-master",
+        "illuminate/container": "dev-master",
+        "illuminate/cookie": "dev-master",
+        "illuminate/database": "dev-master",
+        "illuminate/encryption": "dev-master",
+        "illuminate/events": "dev-master",
+        "illuminate/exception": "dev-master",
+        "illuminate/filesystem": "dev-master",
+        "illuminate/http": "dev-master",
+        "illuminate/log": "dev-master",
+        "illuminate/mail": "dev-master",
+        "illuminate/pagination": "dev-master",
+        "illuminate/redis": "dev-master",
+        "illuminate/routing": "dev-master",
+        "illuminate/session": "dev-master",
+        "illuminate/support": "dev-master",
+        "illuminate/translation": "dev-master",
+        "illuminate/validation": "dev-master",
+        "illuminate/view": "dev-master",
+        "illuminate/workbench": "dev-master"
+    },
+    "require-dev": {
+        "mockery/mockery": "0.7.2"
+    },
+    "suggest": {
+        "illuminate/queue": "Required to use closures when chaining jobs (^7.0)."
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev"
+}

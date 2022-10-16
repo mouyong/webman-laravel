@@ -1,6 +1,6 @@
 <?php
 
-namespace MouYong\WebmanIlluminate;
+namespace MouYong\WebmanLaravel;
 
 class ComposerScripts
 {
@@ -11,7 +11,7 @@ class ComposerScripts
         }
 
         if ($action == 'install') {
-            $manualLoadFile = './vendor/laravel-zero/foundation/'.$manualLoadFile;
+            $manualLoadFile = './vendor/mouyong/laravel-foundation/'.$manualLoadFile;
         }
 
         $content = file_get_contents($filepath);
@@ -66,18 +66,20 @@ class ComposerScripts
 
     public static function postAutoloadDump($event)
     {
+        return;
         $vendorDir = $event->getComposer()->getConfig()->get('vendor-dir');
 
         $rootDir = dirname($vendorDir);
         $manualLoadFile = 'src/Illuminate/Foundation/helpers.php';
         $rootComposerFile = $rootDir . "/composer.json";
-        $laravelZeroComposerFile = $vendorDir . "/laravel-zero/foundation/composer.json";
+        $laravelZeroComposerFile = $vendorDir . "/mouyong/laravel-foundation/composer.json";
 
         static::manualLoadFile($laravelZeroComposerFile, $manualLoadFile, 'remove');
         static::manualLoadFile($rootComposerFile, $manualLoadFile, 'install');
     }
     public static function postUninstall($event)
     {
+        return;
         $vendorDir = $event->getComposer()->getConfig()->get('vendor-dir');
 
         $rootDir = dirname($vendorDir);

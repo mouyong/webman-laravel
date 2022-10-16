@@ -1,5 +1,5 @@
 <?php
-namespace MouYong\WebmanIlluminate;
+namespace MouYong\WebmanLaravel;
 
 class Install
 {
@@ -9,16 +9,15 @@ class Install
      * @var array
      */
     protected static $pathRelation = array (
-        'config/plugin/mouyong/webman-illuminate' => 'config/plugin/mouyong/webman-illuminate',
+        'config/plugin/mouyong/webman-laravel' => 'config/plugin/mouyong/webman-laravel',
         'stubs/app' => 'app',
         'stubs/bootstrap' => 'bootstrap',
-        'stubs/zero' => 'zero',
-        'stubs/box.json' => 'box.json',
+        'stubs/artisan' => 'artisan',
     );
 
     protected static $mergeConfigRelation = array (
-        'stubs/config/app.php' => 'config/app.php',
-        'stubs/config/commands.php' => 'config/commands.php',
+        // 'stubs/config/app.php' => 'config/app.php',
+        // 'stubs/config/commands.php' => 'config/commands.php',
     );
 
     /**

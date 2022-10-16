@@ -1,7 +1,7 @@
 ## 安装
 
 ```
-composer require mouyong/webman-illuminate:dev-master laravel-zero/foundation:dev-main
+ composer require mouyong/webman-laravel-zero:dev-master laravel-zero/foundation:dev-main
 
 php zero app:install database
 composer require illuminate/routing
