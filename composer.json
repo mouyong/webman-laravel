@@ -1,0 +1,16 @@
+{
+  "name": "mouyong/webman-laravel-zero",
+  "type": "library",
+  "license": "MIT",
+  "description": "Webman plugin mouyong/webman-laravel-zero",
+  "require": {
+    "webman/console": "^1.2",
+    "laravel-zero/foundation": "dev-main",
+    "laravel-zero/framework": "^9.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "MouYong\\WebmanIlluminate\\": "src"
+    }
+  }
+}
