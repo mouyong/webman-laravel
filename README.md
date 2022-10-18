@@ -84,7 +84,6 @@ return [
          */
         // \Fresns\PluginManager\Providers\PluginServiceProvider::class,
 
-        
         /**
          * 项目的扩展包
          */
