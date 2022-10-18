@@ -91,3 +91,7 @@ composer require illuminate/auth # 参考 `laravel` 官方配置 `config` 目录
 
 
 ## 效果截图
+
+![image](https://user-images.githubusercontent.com/10336437/196345176-9865a0c0-b3cf-4c49-b17a-058480a93a63.png)
+
+![image](https://user-images.githubusercontent.com/10336437/196345268-b0953196-a2b0-49e6-ac2a-ca2eeaeafc0f.png)
