@@ -17,6 +17,10 @@ define('LARAVEL_START', microtime(true));
 
 require __DIR__.'/vendor/autoload.php';
 
+// 加载配置，避免 laravel 的相关文件在命令行执行时无法获取到配置信息
+// @see https://github.com/walkor/webman-framework/blob/master/src/support/App.php#L30
+\support\App::loadAllConfig(['route', 'container']);
+
 $app = require_once __DIR__.'/bootstrap/app.php';
 
 /*
