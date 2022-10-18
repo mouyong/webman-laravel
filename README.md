@@ -1,9 +1,7 @@
 ## 安装
 
 ```
-composer config repositories.webman-laravel-zero-foundation vcs https://github.com/mouyong/webman-laravel-zero-foundation
-
-composer require mouyong/webman-laravel-zero:dev-master laravel-zero/foundation:dev-main
+composer require mouyong/webman-laravel:dev-master
 ```
 
 
