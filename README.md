@@ -45,6 +45,17 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+
+        /**
+         * 你安装的 laravel 扩展包
+         */
+        // \Fresns\PluginManager\Providers\PluginServiceProvider::class,
+
+        
+        /**
+         * 项目的扩展包
+         */
+        \App\Providers\AppServiceProvider::class,
     ])),
 
     'aliases' => \Illuminate\Support\Facades\Facade::defaultAliases()->merge([
