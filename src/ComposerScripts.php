@@ -11,7 +11,7 @@ class ComposerScripts
         }
 
         if ($action == 'install') {
-            $manualLoadFile = './vendor/mouyong/laravel-foundation/'.$manualLoadFile;
+            $manualLoadFile = './vendor/mouyong/webman-laravel/' . $manualLoadFile;
         }
 
         $content = file_get_contents($filepath);
@@ -28,10 +28,19 @@ class ComposerScripts
             }
         }
 
-        $manualDumpScript = "MouYong\\WebmanIlluminate\\ComposerScripts::postAutoloadDump";
+        $manualDumpScripts = [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "MouYong\\WebmanLaravel\\ComposerScripts::postAutoloadDump",
+        ];
+
+        $manualPsr4Namespace = [
+            "Database\\Factories\\" => "database/factories/",
+            "Database\\Seeders\\" => "database/seeders/",
+        ];
+
         foreach ($json['scripts']['post-autoload-dump'] ?? [] as $index => $script) {
-            if (str_contains($script, $manualDumpScript)) {
-                if ($action  == 'remove') {
+            if ($action  == 'remove') {
+                if (in_array($script, $manualDumpScripts)) {
                     unset($json['scripts']['post-autoload-dump'][$index]);
                 }
             }
@@ -40,17 +49,12 @@ class ComposerScripts
         if ($action == 'install') {
             if (!$loaded) {
                 array_push($json['autoload']['files'], $manualLoadFile);
+                $needManualPsr4NamespaceScripts = array_diff($manualPsr4Namespace, $json['autoload']['psr-4']);
 
-                $json['autoload']['psr-4']["Database\\Factories\\"] = "database/factories/";
-                $json['autoload']['psr-4']["Database\\Seeders\\"] = "database/seeders/";
+                $json['autoload']['psr-4'] = array_merge($needManualPsr4NamespaceScripts, $json['autoload']['psr-4']);
 
-                if (!in_array($manualDumpScript, $json['scripts']['post-autoload-dump'] ?? [])) {
-                    array_push($json['scripts']['post-autoload-dump'], $manualDumpScript);
-                }
-
-                if (empty($json['bin'])) {
-                    $json['bin'] = ['zero'];
-                }
+                $needManualDumpScripts = array_diff($manualDumpScripts, $json['scripts']['post-autoload-dump']);
+                $json['scripts']['post-autoload-dump'] = array_merge($needManualDumpScripts, $json['scripts']['post-autoload-dump']);
             }
         } else if ($action == 'remove') {
             unset($json['autoload']['psr-4']["Database\\Factories\\"]);
@@ -66,11 +70,10 @@ class ComposerScripts
 
     public static function postAutoloadDump($event)
     {
-        return;
         $vendorDir = $event->getComposer()->getConfig()->get('vendor-dir');
 
         $rootDir = dirname($vendorDir);
-        $manualLoadFile = 'src/Illuminate/Foundation/helpers.php';
+        $manualLoadFile = 'Illuminate/Foundation/helpers.php';
         $rootComposerFile = $rootDir . "/composer.json";
         $laravelZeroComposerFile = $vendorDir . "/mouyong/laravel-foundation/composer.json";
 
@@ -83,7 +86,7 @@ class ComposerScripts
         $vendorDir = $event->getComposer()->getConfig()->get('vendor-dir');
 
         $rootDir = dirname($vendorDir);
-        $manualLoadFile = 'src/Illuminate/Foundation/helpers.php';
+        $manualLoadFile = 'Illuminate/Foundation/helpers.php';
         $rootComposerFile = $rootDir . "/composer.json";
         static::manualLoadFile($rootComposerFile, $manualLoadFile, 'remove');
     }

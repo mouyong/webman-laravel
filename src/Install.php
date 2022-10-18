@@ -89,7 +89,9 @@ class Install
 ";
         }
 
-        chmod(base_path()."/zero", 0755);
+        if (file_exists(base_path()."/artisan")) {
+            chmod(base_path()."/artisan", 0755);
+        }
     }
 
     /**

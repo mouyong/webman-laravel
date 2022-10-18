@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Application;
 
-class ZeroBootstrap
+class LaravelBootstrap
 {
     // 引入 laravel 测试 内存占用
     public static function start()
