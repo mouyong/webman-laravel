@@ -25,6 +25,10 @@ class ComposerScripts
                 } else {
                     $loaded = true;
                 }
+
+                if ($loadFile == './support/helpers.php') {
+                    unset($json['autoload']['files'][$index]);
+                }
             }
         }
 

@@ -1,5 +1,36 @@
 ## 安装
 
+1. 在 `start.php` 中强制优先加载本地的 `./support/helpers.php`
+```
+#!/usr/bin/env php
+<?php
+
+// 避免加载了 laravel/illuminate/foundation/helper.php 导致无法控制顺序的函数重定义报错
+require_once __DIR__ . '/support/helpers.php'; // <- here.
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+support\App::run();
+
+```
+
+2. 移除 `composer.json` 中 `autoload.files` 的 `./support/helpers.php` 文件加载
+```
+{
+    ...
+    "autoload": {
+        "psr-4": {
+            ...
+            "": "./",
+            "App\\": "./app"
+        },
+        "files": []
+    },
+    ...
+}
+```
+
+3. 安装插件
 ```
 composer require mouyong/webman-laravel:dev-master
 ```
