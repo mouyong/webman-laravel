@@ -1,7 +1,7 @@
 ## 安装
 
 1. 在 `start.php` 中强制优先加载本地的 `./support/helpers.php`
-```
+```shell
 #!/usr/bin/env php
 <?php
 
@@ -15,7 +15,7 @@ support\App::run();
 ```
 
 2. 移除 `composer.json` 中 `autoload.files` 的 `./support/helpers.php` 文件加载
-```
+```js
 {
     ...
     "autoload": {
@@ -24,7 +24,7 @@ support\App::run();
             "": "./",
             "App\\": "./app"
         },
-        "files": []
+        "files": [] // <- here.
     },
     ...
 }
