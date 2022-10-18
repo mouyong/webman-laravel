@@ -73,7 +73,7 @@ class ComposerScripts
         $vendorDir = $event->getComposer()->getConfig()->get('vendor-dir');
 
         $rootDir = dirname($vendorDir);
-        $manualLoadFile = 'Illuminate/Foundation/helpers.php';
+        $manualLoadFile = 'src/helpers.php';
         $rootComposerFile = $rootDir . "/composer.json";
         $laravelZeroComposerFile = $vendorDir . "/mouyong/laravel-foundation/composer.json";
 
@@ -86,7 +86,7 @@ class ComposerScripts
         $vendorDir = $event->getComposer()->getConfig()->get('vendor-dir');
 
         $rootDir = dirname($vendorDir);
-        $manualLoadFile = 'Illuminate/Foundation/helpers.php';
+        $manualLoadFile = 'src/helpers.php';
         $rootComposerFile = $rootDir . "/composer.json";
         static::manualLoadFile($rootComposerFile, $manualLoadFile, 'remove');
     }
