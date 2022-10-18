@@ -27,8 +27,5 @@
       "Illuminate\\": "Illuminate",
       "MouYong\\WebmanLaravel\\": "src"
     }
-  },
-  "replace": {
-    "laravel/framework" : "^9.0"
   }
 }
