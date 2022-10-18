@@ -1,7 +1,8 @@
 ## 安装
 
 1. 在 `start.php` 中强制优先加载本地的 `./support/helpers.php`
-```shell
+
+```php
 #!/usr/bin/env php
 <?php
 
@@ -11,10 +12,10 @@ require_once __DIR__ . '/support/helpers.php'; // <- here.
 require_once __DIR__ . '/vendor/autoload.php';
 
 support\App::run();
-
 ```
 
 2. 移除 `composer.json` 中 `autoload.files` 的 `./support/helpers.php` 文件加载
+
 ```js
 {
     ...
@@ -31,6 +32,7 @@ support\App::run();
 ```
 
 3. 安装插件
+
 ```
 composer require mouyong/webman-laravel:dev-master
 ```
@@ -99,6 +101,7 @@ return [
 ## 更新 composer.json
 
 `composer.json`
+
 ```js
     "scripts": {
         // 初始化 laravel-zero/illuminate 与相关配置
@@ -113,6 +116,7 @@ return [
 ## 增加 Http 启动引导
 
 `config/bootstrap.php`
+
 ```php
 return [
     \App\LaravelBootstrap::class,
