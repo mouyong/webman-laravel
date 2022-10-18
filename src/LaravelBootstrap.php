@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace MouYong\WebmanLaravel;
 
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Application;

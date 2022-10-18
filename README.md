@@ -119,7 +119,7 @@ return [
 
 ```php
 return [
-    \App\LaravelBootstrap::class,
+    \MouYong\WebmanLaravel\LaravelBootstrap::class,
     ...
 ];
 ```
