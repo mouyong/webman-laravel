@@ -1,6 +1,6 @@
 ## 安装
 
-1. 在 `start.php` 中强制优先加载本地的 `./support/helpers.php`
+1. 在 `start.php` 中强制优先加载本地的 `./support/helpers.php`。使用 `webman/console` 时，需要对 `./webman` 可执行文件同样做如下更改，优先加载 `./support/helpers.php`。
 
 ```php
 #!/usr/bin/env php
